@@ -34,7 +34,7 @@
     }
 
     .wrapper {
-      max-width: 1000px;
+      max-width: 900px;
       width: 100%;
     }
 
@@ -47,11 +47,11 @@
       overflow: hidden;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 720px) {
       .card {
         padding: 36px 40px 32px;
         display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
         gap: 32px;
       }
     }
@@ -116,8 +116,10 @@
       max-width: 200px;
       border-radius: 18px;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-      margin: 0 auto 16px auto;
+      margin-bottom: 14px;
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .details-list {
@@ -155,6 +157,135 @@
     .small-muted {
       font-size: 12px;
       color: #888;
+    }
+
+    .rsvp-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .rsvp-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .rsvp-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid #e2d9ff;
+      font-size: 13px;
+      font-family: inherit;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.08s ease;
+      background: #fcfbff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255, 111, 181, 0.5);
+      transform: translateY(-1px);
+    }
+
+    textarea {
+      min-height: 64px;
+      resize: vertical;
+    }
+
+    .row {
+      display: grid;
+      gap: 10px;
+    }
+
+    @media (min-width: 480px) {
+      .row.two {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+
+    .required {
+      color: #e03a3a;
+    }
+
+    .btn-primary {
+      margin-top: 4px;
+      border: none;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: radial-gradient(circle at top left, #fface0, #ff6fb5);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 12px 24px rgba(255, 111, 181, 0.33);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    .btn-primary span.arrow {
+      font-size: 15px;
+      transform: translateY(1px);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 32px rgba(255, 111, 181, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(255, 111, 181, 0.3);
+    }
+
+    .helper-text {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    footer span.heart {
+      color: var(--accent-dark);
     }
 
     .calendar-buttons {
@@ -205,61 +336,6 @@
       border: 1px solid rgba(255, 111, 181, 0.5);
       box-shadow: none;
     }
-
-    /* Right side: Google Form container */
-    .form-wrapper {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 20px;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      padding: 16px 16px 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    .form-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .form-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .form-fallback {
-      margin: 10px 0 6px;
-      font-size: 12px;
-      color: #777;
-    }
-
-    iframe.google-form {
-      width: 100%;
-      min-height: 520px;
-      border: none;
-      border-radius: 16px;
-      background: #ffffff;
-    }
-
-    footer {
-      margin-top: 12px;
-      font-size: 11px;
-      color: #aaa;
-      text-align: center;
-    }
-
-    footer span.heart {
-      color: var(--accent-dark);
-    }
-
-    @media (max-width: 799px) {
-      .card {
-        display: block;
-      }
-      iframe.google-form {
-        min-height: 600px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -281,7 +357,7 @@
           </p>
         </header>
 
-        <!-- Optional Huntrex image (if you upload huntrex-logo.png next to this file) -->
+        <!-- Optional Huntrex image: place "huntrex-logo.png" in the same folder as this file -->
         <img src="huntrex-logo.png" alt="Huntrex themed party" class="theme-logo" />
 
         <ul class="details-list">
@@ -295,7 +371,7 @@
           </li>
           <li>
             <span class="details-label">Theme</span>
-            <span>Huntrex adventure party – optional dress-up as Huntrex characters or any other costume.</span>
+            <span>Huntrex adventure party – (optional) dress-up as Huntrex characters or any other costume.</span>
           </li>
           <li>
             <span class="details-label">RSVP</span>
@@ -306,11 +382,11 @@
         <p class="note">
           Optional dress code: <strong>Huntrex theme.</strong> Costumes are completely voluntary –
           normal clothes are also perfectly fine. If your child has any allergies or special needs, please
-          include them when you confirm.
+          let us know in the comments when you confirm.
         </p>
 
         <p class="small-muted">
-          Drop-off / pick-up info: drop-off at 10:00, pick-up at 12:00.
+          Drop-off / pick-up info: Drop-off at 10:00, pick-up at 12:00.
           Parking available near Villa Marina.
         </p>
 
@@ -324,41 +400,112 @@
           >
             Google Calendar
           </a>
+          <a
+            class="btn-secondary btn-outline"
+            href="greta-birthday.ics"
+            download="Greta-Birthday-Party.ics"
+          >
+            Apple / Outlook
+          </a>
         </div>
       </section>
 
-      <!-- RIGHT: EMBEDDED GOOGLE FORM -->
+      <!-- RIGHT: RSVP FORM (FORMSPREE) -->
       <section>
-        <div class="form-wrapper">
-          <div class="form-title">RSVP / Attendance</div>
-          <p class="form-subtitle">
-            Please use the form below to confirm if your child can attend Greta’s 6th birthday party.
+        <div class="rsvp-card">
+          <h2 class="rsvp-title">RSVP / Attendance</h2>
+          <p class="rsvp-subtitle">
+            Please add your child’s name and confirm if they can attend Greta’s 6th birthday party.
           </p>
 
-          <!-- Embedded Google Form -->
-          <iframe
-            class="google-form"
-            src="https://forms.gle/LcKHSFDhRr3nmFV57"
+          <!-- Formspree form -->
+          <form
+            action="https://formspree.io/f/xnnywoje"
+            method="POST"
           >
-            Loading…
-          </iframe>
+            <!-- optional subject line for the email -->
+            <input type="hidden" name="_subject" value="Greta's birthday RSVP" />
 
-          <p class="form-fallback">
-            If the form does not appear above, please click the button below:
-          </p>
+            <div class="row">
+              <div>
+                <label for="child-name">Child’s name <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="child-name"
+                  name="child-name"
+                  required
+                />
+              </div>
+            </div>
 
-          <a
-            class="btn-secondary btn-outline"
-            href="https://forms.gle/LcKHSFDhRr3nmFV57"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open RSVP form in a new tab
-          </a>
+            <div class="row two">
+              <div>
+                <label for="parent-name">Parent / guardian</label>
+                <input
+                  type="text"
+                  id="parent-name"
+                  name="parent-name"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label for="attendance">Can they come?</label>
+                <select id="attendance" name="attendance">
+                  <option value="Yes, will attend" selected>Yes, will attend</option>
+                  <option value="No, can’t make it">No, can’t make it</option>
+                  <option value="Maybe">Maybe</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row two">
+              <div>
+                <label for="guests">Number of kids</label>
+                <input
+                  type="number"
+                  id="guests"
+                  name="number-of-children"
+                  min="1"
+                  max="5"
+                  placeholder="1"
+                />
+              </div>
+              <div>
+                <label for="contact">Contact (optional)</label>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact-details"
+                  placeholder="Email or phone"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="notes">Allergies / notes</label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  placeholder="Food allergies, who they’re coming with, anything we should know..."
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Confirm attendance
+              <span class="arrow">→</span>
+            </button>
+
+            <p class="helper-text">
+              After you press the button, you’ll see a short confirmation page and we’ll receive your reply.
+            </p>
+          </form>
         </div>
 
         <footer>
-          Made with <span class="heart">♥</span> by Greta’s very excited (and slightly tired) parents.
+          Made with <span class="heart">♥</span> by Greta’s very excited parents.
         </footer>
       </section>
     </main>
