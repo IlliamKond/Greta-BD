@@ -12,503 +12,158 @@
       --accent-dark: #e4539b;
       --text-main: #333333;
       --text-muted: #666666;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-lg: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.08);
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #ffe4f3 0, #fef6ff 40%, #e4f5ff 100%);
-      color: var(--text-main);
-      min-height: 100vh;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #ffe4f3, #fef6ff 40%, #e4f5ff);
+      margin: 0;
+      padding: 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 24px;
-    }
-
-    .wrapper {
-      max-width: 900px;
-      width: 100%;
     }
 
     .card {
       background: var(--card-bg);
+      max-width: 900px;
+      width: 100%;
+      padding: 32px;
       border-radius: 28px;
       box-shadow: var(--shadow-soft);
-      padding: 28px 24px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    @media (min-width: 720px) {
-      .card {
-        padding: 36px 40px 32px;
-        display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-        gap: 32px;
-      }
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(1px);
-      opacity: 0.6;
-      z-index: -1;
-    }
-    .blob-1 {
-      width: 220px; height: 220px;
-      background: #ffe1f1;
-      top: -60px; right: -40px;
-    }
-    .blob-2 {
-      width: 180px; height: 180px;
-      background: #ffecc7;
-      bottom: -70px; left: -40px;
-    }
-
-    header {
-      margin-bottom: 18px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 111, 181, 0.08);
-      border-radius: 999px;
-      padding: 4px 10px 4px 6px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-dark);
-      margin-bottom: 10px;
-    }
-
-    .tag-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(255, 111, 181, 0.23);
     }
 
     h1 {
-      font-size: clamp(26px, 3.1vw, 34px);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-    }
-
-    .theme-logo {
-      max-width: 200px;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-      margin-bottom: 14px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .details-list {
-      list-style: none;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .details-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
+      font-size: 32px;
       margin-bottom: 8px;
-    }
-
-    .details-label {
-      width: 64px;
-      font-weight: 600;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      flex-shrink: 0;
-    }
-
-    .note {
-      font-size: 13px;
-      color: var(--text-muted);
-      background: #fff4fb;
-      border-radius: 12px;
-      padding: 10px 12px;
-      margin-bottom: 14px;
-    }
-
-    .small-muted {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .rsvp-card {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      padding: 18px 18px 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    .rsvp-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .rsvp-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    form {
-      display: grid;
-      gap: 10px;
-    }
-
-    label {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid #e2d9ff;
-      font-size: 13px;
-      font-family: inherit;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.08s ease;
-      background: #fcfbff;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(255, 111, 181, 0.5);
-      transform: translateY(-1px);
-    }
-
-    textarea {
-      min-height: 64px;
-      resize: vertical;
-    }
-
-    .row {
-      display: grid;
-      gap: 10px;
-    }
-
-    @media (min-width: 480px) {
-      .row.two {
-        grid-template-columns: 1.3fr 1fr;
-      }
-    }
-
-    .required {
-      color: #e03a3a;
-    }
-
-    .btn-primary {
-      margin-top: 4px;
-      border: none;
-      border-radius: 999px;
-      padding: 9px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      background: radial-gradient(circle at top left, #fface0, #ff6fb5);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 12px 24px rgba(255, 111, 181, 0.33);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
-    }
-
-    .btn-primary span.arrow {
-      font-size: 15px;
-      transform: translateY(1px);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-      box-shadow: 0 16px 32px rgba(255, 111, 181, 0.4);
-    }
-
-    .btn-primary:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 18px rgba(255, 111, 181, 0.3);
-    }
-
-    .helper-text {
-      font-size: 11px;
-      color: #999;
-      margin-top: 4px;
-    }
-
-    footer {
-      margin-top: 12px;
-      font-size: 11px;
-      color: #aaa;
-      text-align: center;
-    }
-
-    footer span.heart {
       color: var(--accent-dark);
     }
 
-    .calendar-buttons {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
     }
 
-    .calendar-text {
-      font-size: 12px;
-      color: #777;
-      margin-right: 4px;
+    .theme-logo {
+      max-width: 180px;
+      display: block;
+      margin: 0 auto 20px;
     }
 
-    .btn-secondary {
+    .details-list {
+      font-size: 15px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .note {
+      background: #fff4fb;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .rsvp-box {
+      padding: 20px;
+      background: #ffffffd9;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #d9c9ff;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #fface0, #ff6fb5);
+      color: white;
+      padding: 12px 22px;
       border: none;
       border-radius: 999px;
-      padding: 7px 14px;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
-      background: #ff6fb5;
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 18px rgba(255, 111, 181, 0.3);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      box-shadow: 0 8px 20px rgba(255,111,181,0.3);
     }
 
-    .btn-secondary:hover {
+    button:hover {
       transform: translateY(-1px);
-      filter: brightness(1.03);
-      box-shadow: 0 12px 24px rgba(255, 111, 181, 0.35);
     }
 
-    .btn-secondary:active {
-      transform: translateY(0);
-      box-shadow: 0 6px 14px rgba(255, 111, 181, 0.25);
-    }
-
-    .btn-secondary.btn-outline {
-      background: #ffffff;
-      color: #ff4f9f;
-      border: 1px solid rgba(255, 111, 181, 0.5);
-      box-shadow: none;
+    footer {
+      margin-top: 18px;
+      font-size: 12px;
+      text-align: center;
+      color: #777;
     }
   </style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <main class="card">
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
+  <div class="card">
 
-      <!-- LEFT: INVITE TEXT -->
-      <section>
-        <header>
-          <div class="tag">
-            <span class="tag-dot"></span>
-            <span>Birthday party invite</span>
-          </div>
-          <h1>Come celebrate <span style="color: var(--accent-dark);">Greta</span> turning 6!</h1>
-          <p class="subtitle">
-            Greta is having a Huntrex adventure party and would love for your child to join the fun.
-          </p>
-        </header>
+    <h1>Greta’s 6th Birthday Party 🎉</h1>
+    <p class="subtitle">We would love to see your child at Greta's Huntrex-themed birthday adventure!</p>
 
-        <!-- Optional Huntrex image: place "huntrex-logo.png" in the same folder as this file -->
-        <img src="huntrex-logo.png" alt="Huntrex themed party" class="theme-logo" />
+    <img src="huntrex-logo.png" class="theme-logo" alt="Huntrex Logo">
 
-        <ul class="details-list">
-          <li>
-            <span class="details-label">When</span>
-            <span><strong>Sunday, 14 December 2025</strong> at <strong>10:00</strong></span>
-          </li>
-          <li>
-            <span class="details-label">Where</span>
-            <span>Dragon Castle, Villa Marina, Douglas<br />Entrance via main Villa Marina foyer.</span>
-          </li>
-          <li>
-            <span class="details-label">Theme</span>
-            <span>Huntrex adventure party – (optional) dress-up as Huntrex characters or any other costume.</span>
-          </li>
-          <li>
-            <span class="details-label">RSVP</span>
-            <span>Please confirm using the form on this page.</span>
-          </li>
-        </ul>
+    <div class="details-list">
+      <strong>Date:</strong> 14 December 2025 at 10:00<br>
+      <strong>Venue:</strong> Dragon Castle, Villa Marina, Douglas<br>
+      <strong>Theme:</strong> Huntrex (optional dress-up)
+    </div>
 
-        <p class="note">
-          Optional dress code: <strong>Huntrex theme.</strong> Costumes are completely voluntary –
-          normal clothes are also perfectly fine. If your child has any allergies or special needs, please
-          let us know in the comments when you confirm.
-        </p>
+    <div class="note">
+      If your child has allergies or special needs, please mention them below.
+    </div>
 
-        <p class="small-muted">
-          Drop-off / pick-up info: Drop-off at 10:00, pick-up at 12:00.
-          Parking available near Villa Marina.
-        </p>
+    <!-- 🧁 Formspree Form -->
+    <div class="rsvp-box">
+      <h2>RSVP</h2>
+      <form action="https://formspree.io/f/xnnywoje" method="POST">
 
-        <div class="calendar-buttons">
-          <span class="calendar-text">Save the date:</span>
-          <a
-            class="btn-secondary"
-            href="https://www.google.com/calendar/render?action=TEMPLATE&text=Greta%27s%206th%20Birthday%20Party&dates=20251214T100000/20251214T120000&details=Greta%27s%20Huntrex%20birthday%20adventure%20party&location=Dragon%20Castle%2C%20Villa%20Marina%2C%20Douglas"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Calendar
-          </a>
-          <a
-            class="btn-secondary btn-outline"
-            href="greta-birthday.ics"
-            download="Greta-Birthday-Party.ics"
-          >
-            Apple / Outlook
-          </a>
-        </div>
-      </section>
+        <label>Child's name *</label>
+        <input type="text" name="child-name" required>
 
-      <!-- RIGHT: RSVP FORM (FORMSPREE) -->
-      <section>
-        <div class="rsvp-card">
-          <h2 class="rsvp-title">RSVP / Attendance</h2>
-          <p class="rsvp-subtitle">
-            Please add your child’s name and confirm if they can attend Greta’s 6th birthday party.
-          </p>
+        <label>Parent / guardian name</label>
+        <input type="text" name="parent">
 
-          <!-- Formspree form -->
-          <form
-            action="https://formspree.io/f/xnnywoje"
-            method="POST"
-          >
-            <!-- optional subject line for the email -->
-            <input type="hidden" name="_subject" value="Greta's birthday RSVP" />
+        <label>Will they attend?</label>
+        <select name="attendance">
+          <option value="Yes">Yes, attending</option>
+          <option value="No">No, can't make it</option>
+          <option value="Maybe">Maybe</option>
+        </select>
 
-            <div class="row">
-              <div>
-                <label for="child-name">Child’s name <span class="required">*</span></label>
-                <input
-                  type="text"
-                  id="child-name"
-                  name="child-name"
-                  required
-                />
-              </div>
-            </div>
+        <label>Number of children</label>
+        <input type="number" name="num-kids" min="1" max="5">
 
-            <div class="row two">
-              <div>
-                <label for="parent-name">Parent / guardian</label>
-                <input
-                  type="text"
-                  id="parent-name"
-                  name="parent-name"
-                  placeholder="Your name"
-                />
-              </div>
+        <label>Contact (optional)</label>
+        <input type="text" name="contact">
 
-              <div>
-                <label for="attendance">Can they come?</label>
-                <select id="attendance" name="attendance">
-                  <option value="Yes, will attend" selected>Yes, will attend</option>
-                  <option value="No, can’t make it">No, can’t make it</option>
-                  <option value="Maybe">Maybe</option>
-                </select>
-              </div>
-            </div>
+        <label>Notes / allergies</label>
+        <textarea name="notes"></textarea>
 
-            <div class="row two">
-              <div>
-                <label for="guests">Number of kids</label>
-                <input
-                  type="number"
-                  id="guests"
-                  name="number-of-children"
-                  min="1"
-                  max="5"
-                  placeholder="1"
-                />
-              </div>
-              <div>
-                <label for="contact">Contact (optional)</label>
-                <input
-                  type="text"
-                  id="contact"
-                  name="contact-details"
-                  placeholder="Email or phone"
-                />
-              </div>
-            </div>
+        <button type="submit">Confirm Attendance →</button>
+      </form>
+    </div>
 
-            <div class="row">
-              <div>
-                <label for="notes">Allergies / notes</label>
-                <textarea
-                  id="notes"
-                  name="notes"
-                  placeholder="Food allergies, who they’re coming with, anything we should know..."
-                ></textarea>
-              </div>
-            </div>
+    <footer>Made with ❤️ by Greta’s very excited parents</footer>
 
-            <button type="submit" class="btn-primary">
-              Confirm attendance
-              <span class="arrow">→</span>
-            </button>
-
-            <p class="helper-text">
-              After you press the button, you’ll see a short confirmation page and we’ll receive your reply.
-            </p>
-          </form>
-        </div>
-
-        <footer>
-          Made with <span class="heart">♥</span> by Greta’s very excited parents.
-        </footer>
-      </section>
-    </main>
   </div>
 </body>
 </html>
