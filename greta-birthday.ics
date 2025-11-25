@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GretaBirthday//EN
+BEGIN:VEVENT
+UID:greta-6th-bday-20251214T100000
+DTSTAMP:20251125T000000Z
+DTSTART:20251214T100000
+DTEND:20251214T120000
+SUMMARY:Greta's 6th Birthday Party
+LOCATION:Dragon Castle, Villa Marina, Douglas
+DESCRIPTION:Huntrex themed birthday party for Greta at Dragon Castle, Villa Marina, Douglas.
+END:VEVENT
+END:VCALENDAR
